@@ -138,8 +138,8 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       DisplayName: '{PlayerName}'
-      UseCharacterColor: 0
-      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      UseCharacterColor: 1
+      NameColor: {r: 1, g: 0.84278667, b: 0, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
       HighlightWhenSpeaking: 0
       HighlightCharacterCount: 0

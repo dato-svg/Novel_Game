@@ -1,18 +1,21 @@
 @despawn book
 @back Location2
-@char Hokaru visible:false time:0
 @hideUI MapUI
-Player: вот это руум
+
 @if !Visited_Location2
     @char Sakura.Smile
+    Player: классная комната 
     Sakura: "Привет, {PlayerName}!Пройди мини-игру «Парные карточки».
     @playMiniGame GameName:MemoryCards
     Sakura: "Отлично! Теперь иди и забери предмет на Локации 3."
-    @setQuestText Text:"Забрать предмет на 3 локаций"
+    @setQuestText Text:"Забери предмет на локации 3"
+    Player: Ok!
+    @char Sakura visible:false time:0
     @set Visited_Location2=true
 @else
     @print "Ты вернулся на Локацию 2, но Sakura уже ушла."
 @endif
 
 @showUI MapUI
+
 @stop

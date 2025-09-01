@@ -41,9 +41,9 @@ public class InteractiveItem : MonoBehaviour
 
         gameObject.SetActive(false);
         variableManager.SetVariableValue("Take_Item", "true");
-
+        FindObjectOfType<MapUI>().location3Btn.interactable = false;
         // Скрываем UI квеста
         if (questUI != null)
-            questUI.HideAfterCompletion();
+            questUI.SetQuest("Иди на локацию 1 и передай предмет");
     }
 }

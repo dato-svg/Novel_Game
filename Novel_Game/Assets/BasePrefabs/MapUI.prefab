@@ -291,6 +291,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6214744498940705426}
+        m_TargetAssemblyTypeName: MapController, Assembly-CSharp
+        m_MethodName: MapRemover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5067666738052952955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +649,7 @@ GameObject:
   - component: {fileID: 2644266036325981295}
   - component: {fileID: 392484199871738553}
   - component: {fileID: 1467159183019750380}
+  - component: {fileID: 6214744498940705426}
   m_Layer: 5
   m_Name: map2
   m_TagString: Untagged
@@ -745,18 +758,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61195437166917674}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1467159183019750380}
         m_TargetAssemblyTypeName: Naninovel.PlayScript, Elringus.Naninovel.Runtime
         m_MethodName: Play
@@ -797,6 +798,20 @@ MonoBehaviour:
   scriptText: 
   playOnAwake: 0
   disableWaitInput: 0
+--- !u!114 &6214744498940705426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451528341878607265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90b163745626e24caf7d271b664fb19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button2: {fileID: 392484199871738553}
+  button3: {fileID: 61195437166917674}
 --- !u!1 &8830756054500608259
 GameObject:
   m_ObjectHideFlags: 0

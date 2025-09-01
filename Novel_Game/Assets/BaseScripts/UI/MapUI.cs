@@ -7,7 +7,7 @@ public class MapUI : CustomUI
 {
     [SerializeField] private Button location1Btn;
     [SerializeField] private Button location2Btn;
-    [SerializeField] private Button location3Btn;
+    public Button location3Btn;
 
     // protected override void Awake()
     // {

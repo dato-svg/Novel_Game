@@ -1,5 +1,5 @@
-@char Hokaru visible:false time:0
-@char Sakura visible:false time:0
+@char Hokaru visible:false time:0.1
+@char Sakura visible:false time:0.1
 @hideUI MapUI
 @back Location3
 
@@ -12,7 +12,7 @@
     @spawn book
     @print "Ты вернулся сюда, книга снова доступна"
 @else
-    Hokaru: "Ты уже был здесь, {PlayerName}. Нечего нового."
+    Hokaru: "Ты уже был здесь, {PlayerName}. Ничего нового."
 @endif
 
 

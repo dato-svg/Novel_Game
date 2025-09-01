@@ -3,10 +3,11 @@
 @char Player
 @bgm BackMusic fade:1 loop:true
 @waitForInput
+Добро пожаловать Octo Games
 @char Hokaru.Smile
 
-Hokaru: Привет, Добро пожаловать в игру {PlayerName}
-Player: и тебе не хварать
+Hokaru: Рада видеть вас здесь {PlayerName}
+Player: Начнем наше приключения
 
 @showUI QuestUI1
 @setQuestText text:"Начало приключения"

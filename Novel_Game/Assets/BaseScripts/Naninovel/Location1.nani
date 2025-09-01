@@ -5,10 +5,11 @@
 @hideUI MapUI
 
 @if !Visited_Location1
+    @char Sakura visible:false time:0
     @char Hokaru.Smile tint:#FFFFFF
     Hokaru: "Привет, {PlayerName}! У меня есть для тебя задание."
     Hokaru: "Отправляйся в локацию 2, чтобы обновить задание."
-    @setQuestText Text:"Отправляйся на карту номер 2"
+    @setQuestText Text:"Отправляйся на локацию 2"
     
     @char Player tint:#FFFFFF
     @char Hokaru.Smile tint:#808080
@@ -23,9 +24,10 @@
 
 @else
     @char Hokaru.Smile tint:#FFFFFF
-    Hokaru: "Ты уже был здесь, {PlayerName}. Нечего нового."
+    Hokaru: "Ты уже был здесь, {PlayerName}. Ничего нового."
+    Player: ...
 @endif
-
+@char Hokaru visible:false time:0
 @showUI MapUI
 @stop
 
@@ -37,10 +39,10 @@
 @char Sakura look:right visible:true tint:#FFFFFF
 
 @print "Ты принес предмет. Кому решишь отдать?"
+@hideUI QuestUI1
 
-
-@choice "Отдать NPC-1" set:finalChoice=1
-@choice "Отдать NPC-2" set:finalChoice=2
+@choice "Отдать Hokaru" set:finalChoice=1
+@choice "Отдать Sakura" set:finalChoice=2
 @choice "Оставить себе" set:finalChoice=3
 
 # ChoiceLabel1
@@ -66,7 +68,7 @@
     @shake Sakura
     @char Hokaru.Angry tint:#FFFFFF
     @char Sakura.Smile tint:#808080
-    Hokaru.Angry: "Что? Он отдал предмет Sakura"
+    Hokaru.Angry: "Что? Ты отдал предмет Sakure"
 
 @elseif finalChoice==3
     @back Location1 tint:maroon
@@ -77,10 +79,9 @@
     @char Sakura tint:#FFFFFF
     @char Hokaru.Angry tint:#808080
     Sakura.Sad: "Не могу в это поверить!"
-    КООО НЕЕЕЕ ЦЦ
 @endif
 
-
+Finish
 @if finalChoice==0
     ; если выбор ещё не сделан, остаёмся на этой метке
     @goto .ChoiceLabel1
