@@ -11,12 +11,18 @@ public class InteractiveItem : MonoBehaviour
     public Color normalColor = Color.white;
     public Color hoverColor = Color.yellow;
 
+    [SerializeField] private QuestUIController questUI;
+
     private void Awake()
     {
         variableManager = Engine.GetService<ICustomVariableManager>();
         rend = GetComponent<Renderer>();
         mat = rend.material;
         mat.SetColor("_OutLine_Color", normalColor);
+
+
+        if (questUI == null)
+            questUI = FindObjectOfType<QuestUIController>();
     }
 
     private void OnMouseEnter()
@@ -29,14 +35,15 @@ public class InteractiveItem : MonoBehaviour
         mat.SetColor("_OutLine_Color", normalColor);
     }
 
-    private async void OnMouseDown()
+    private void OnMouseDown()
     {
         if (!enabled || !gameObject.activeInHierarchy) return;
 
         gameObject.SetActive(false);
         variableManager.SetVariableValue("Take_Item", "true");
 
-        var completeQuest = new CompleteQuestCommand { Text = "Забрать предмет из 3 локаций" };
-        await completeQuest.ExecuteAsync();
+        // Скрываем UI квеста
+        if (questUI != null)
+            questUI.HideAfterCompletion();
     }
 }

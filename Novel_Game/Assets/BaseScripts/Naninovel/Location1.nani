@@ -8,7 +8,6 @@
     @char Hokaru.Smile tint:#FFFFFF
     Hokaru: "Привет, {PlayerName}! У меня есть для тебя задание."
     Hokaru: "Отправляйся в локацию 2, чтобы обновить задание."
-    @completeQuest Text:"Начало приключения"
     @setQuestText Text:"Отправляйся на карту номер 2"
     
     @char Player tint:#FFFFFF
@@ -36,9 +35,6 @@
 
 @char Hokaru look:left tint:#FFFFFF
 @char Sakura look:right visible:true tint:#FFFFFF
-
-
-@hideUI QuestUI1
 
 @print "Ты принес предмет. Кому решишь отдать?"
 

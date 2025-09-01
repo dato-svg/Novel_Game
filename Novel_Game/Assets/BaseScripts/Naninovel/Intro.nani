@@ -1,7 +1,7 @@
 @input PlayerName
 @back first
 @char Player
-
+@bgm BackMusic fade:1 loop:true
 @waitForInput
 @char Hokaru.Smile
 

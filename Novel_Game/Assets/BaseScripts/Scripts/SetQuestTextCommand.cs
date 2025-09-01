@@ -14,7 +14,7 @@ public class SetQuestTextCommand : Command
         if (questUI != null)
         {
             Debug.Log("Я зашел setquestText");
-            questUI.AddQuest(Text);
+            questUI.SetQuest(Text);
         }
 
         return UniTask.CompletedTask;
