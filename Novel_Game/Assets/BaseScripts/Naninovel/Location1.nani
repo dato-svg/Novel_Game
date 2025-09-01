@@ -1,0 +1,94 @@
+; === Location1 ===
+@despawn book
+@back Location1
+@char Hokaru.Smile
+@hideUI MapUI
+
+@if !Visited_Location1
+    @char Hokaru.Smile tint:#FFFFFF
+    Hokaru: "Привет, {PlayerName}! У меня есть для тебя задание."
+    Hokaru: "Отправляйся в локацию 2, чтобы обновить задание."
+    @completeQuest Text:"Начало приключения"
+    @setQuestText Text:"Отправляйся на карту номер 2"
+    
+    @char Player tint:#FFFFFF
+    @char Hokaru.Smile tint:#808080
+    Player: "Понял"
+    Player: "Приступаю к задаче!"
+    
+    @showUI MapUI
+    @set Visited_Location1=true
+
+@elseif Take_Item
+    @goto .ChoiceLabel
+
+@else
+    @char Hokaru.Smile tint:#FFFFFF
+    Hokaru: "Ты уже был здесь, {PlayerName}. Нечего нового."
+@endif
+
+@showUI MapUI
+@stop
+
+
+; === Метка для выбора ===
+# ChoiceLabel
+
+@char Hokaru look:left tint:#FFFFFF
+@char Sakura look:right visible:true tint:#FFFFFF
+
+
+@hideUI QuestUI1
+
+@print "Ты принес предмет. Кому решишь отдать?"
+
+
+@choice "Отдать NPC-1" set:finalChoice=1
+@choice "Отдать NPC-2" set:finalChoice=2
+@choice "Оставить себе" set:finalChoice=3
+
+# ChoiceLabel1
+@print "Я должен сделать выбор"
+
+
+; === Результат выбора ===
+@if finalChoice==1
+    @back Location1 tint:maroon
+    @char Hokaru.Smile tint:#FFFFFF
+    @char Sakura tint:#808080
+    Hokaru.Smile: "Спасибо, я довольна!"
+    @shake Hokaru
+    @char Sakura.Sad tint:#FFFFFF
+    @char Hokaru.Smile tint:#808080
+    Sakura.Sad: "Что? Он отдал предмет Hokaru"
+
+@elseif finalChoice==2
+    @back Location1 tint:maroon
+    @char Sakura.Smile tint:#FFFFFF
+    @char Hokaru.Angry tint:#808080
+    Sakura.Smile: "Спасибо, я довольна!"
+    @shake Sakura
+    @char Hokaru.Angry tint:#FFFFFF
+    @char Sakura.Smile tint:#808080
+    Hokaru.Angry: "Что? Он отдал предмет Sakura"
+
+@elseif finalChoice==3
+    @back Location1 tint:maroon
+    @char Hokaru.Angry tint:#FFFFFF
+    @char Sakura.Sad tint:#808080
+    Hokaru.Angry: "Хм, он оставил предмет себе…"
+    @shake Hokaru
+    @char Sakura tint:#FFFFFF
+    @char Hokaru.Angry tint:#808080
+    Sakura.Sad: "Не могу в это поверить!"
+    КООО НЕЕЕЕ ЦЦ
+@endif
+
+
+@if finalChoice==0
+    ; если выбор ещё не сделан, остаёмся на этой метке
+    @goto .ChoiceLabel1
+@endif
+
+@showUI MapUI
+@stop

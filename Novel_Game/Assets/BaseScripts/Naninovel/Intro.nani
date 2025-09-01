@@ -1,0 +1,17 @@
+@input PlayerName
+@back first
+@char Player
+
+@waitForInput
+@char Hokaru.Smile
+
+Hokaru: Привет, Добро пожаловать в игру {PlayerName}
+Player: и тебе не хварать
+
+@showUI QuestUI1
+@setQuestText text:"Начало приключения"
+
+@moveTo LocationName:Location1
+
+
+@stop

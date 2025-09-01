@@ -1,0 +1,20 @@
+@char Hokaru visible:false time:0
+@char Sakura visible:false time:0
+@hideUI MapUI
+@back Location3
+
+@if !Visited_Location3 && !Take_Item
+    @spawn book
+    @print "Ты видишь предмет на локации"
+    @print "Возьми его и отдай кому-то"
+    @set Visited_Location3=true
+@elseif !Take_Item
+    @spawn book
+    @print "Ты вернулся сюда, книга снова доступна"
+@else
+    Hokaru: "Ты уже был здесь, {PlayerName}. Нечего нового."
+@endif
+
+
+@showUI MapUI
+@stop
